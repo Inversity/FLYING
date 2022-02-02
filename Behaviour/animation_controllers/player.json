@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player_tp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [ { "teleport": "query.get_equipped_item_name('main_hand') == 'player_head'" } ]
+				},
+				"teleport": {
+					"transitions": [ { "default": "query.get_equipped_item_name('main_hand') == 'nothing'" } ],
+					"on_entry": [ 
+						"/tp @s @r[tag=!spectator]"
+					]
+				}
+			}
+		},
+		
+		"controller.animation.player_death": {
+			"initial_state": "alive",
+			"states": {
+				"alive": {
+					"transitions": [ { "dead": "!query.is_alive" } ],
+					"on_entry": [
+						"/function setup",
+						"/execute @s[tag=spectator] ~ ~ ~ function spectator"
+					]
+				},
+				"dead": {
+					"transitions": [ { "alive": "query.is_alive" } ],
+					"on_entry": [
+						"/tag @s add spectator",
+						"/gamemode adventure @s"
+					]
+
+				}
+			}
+		}
+	}
+}

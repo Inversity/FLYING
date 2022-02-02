@@ -1,0 +1,23 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "v1.2 | Pack By §6FoxyNoTail§r | Hardcore Mode | @foxynotail | Visit §9www.foxynotail.com§r for more packs and add-ons | © 2021, FoxyNoTail",
+        "name": "§6Foxy's§r §l§bHardcore Mode§r [B]",
+        "uuid": "59ee7ee2-2dfc-43ed-b03d-4894f410c1c0",
+        "version": [1, 2, 0],
+		"min_engine_version": [1, 17, 10]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "uuid": "46087835-8c51-47d4-ba4c-e178b0104a68",
+            "version": [1, 2, 0]
+        }
+    ],
+	"dependencies": [
+	  {
+		"uuid": "fb42123c-3d62-47dc-93c8-b3af4be18c8a",
+		"version": [1, 2, 0]
+	  }
+	]
+}
